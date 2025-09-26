@@ -238,3 +238,50 @@ html, body {
   .legend, .lead, .details { font-size: 15px; }
   .photo-polaroid img { width: 180px; }
 }
+
+/* === Botón de música flotante === */
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--lavanda), var(--dorado));
+  box-shadow: 0 0 20px rgba(246, 211, 101, 0.6), 0 8px 20px rgba(0,0,0,0.4);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.music-btn:hover {
+  transform: scale(1.1) rotate(8deg);
+  box-shadow: 0 0 25px var(--dorado-brillo), 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* Íconos internos */
+.music-btn .icon-play,
+.music-btn .icon-pause {
+  position: absolute;
+  width: 20px; height: 20px;
+  background: var(--morado-oscuro);
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
+.icon-play {
+  mask: url("data:image/svg+xml;utf8,<svg fill='black' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg>");
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg fill='black' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M8 5v14l11-7z'/></svg>");
+}
+
+.icon-pause {
+  mask: url("data:image/svg+xml;utf8,<svg fill='black' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 19h4V5H6v14zm8-14v14h4V5h-4z'/></svg>");
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg fill='black' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 19h4V5H6v14zm8-14v14h4V5h-4z'/></svg>");
+}
+
+/* Estados */
+.music-btn.paused .icon-play { display: block; }
+.music-btn.paused .icon-pause { display: none; }
+
+.music-btn.playing .icon-play { display: none; }
+.music-btn.playing .icon-pause { display: block; }

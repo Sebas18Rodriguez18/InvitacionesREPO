@@ -1,30 +1,44 @@
 window.addEventListener("DOMContentLoaded", () => {
   const bgMusic = document.getElementById("bgMusic");
+  const toggleBtn = document.getElementById("musicToggle");
 
-  // Inicialmente lo dejamos muteado
-  bgMusic.muted = true;
   bgMusic.volume = 0.6;
 
-  // Intentar reproducir apenas cargue
-  bgMusic.play().catch(() => {
-    console.log("Autoplay bloqueado. Esperando interacción...");
+  // Estado inicial
+  toggleBtn.classList.add("paused");
+
+  // Al tocar el botón
+  toggleBtn.addEventListener("click", () => {
+    if (bgMusic.paused) {
+      bgMusic.play().then(() => {
+        bgMusic.muted = false;
+        toggleBtn.classList.remove("paused");
+        toggleBtn.classList.add("playing");
+      });
+    } else {
+      bgMusic.pause();
+      toggleBtn.classList.remove("playing");
+      toggleBtn.classList.add("paused");
+    }
   });
 
-  // Apenas el usuario interactúe, habilitamos el sonido
+  // Reintento en primera interacción (para móviles)
   const enableSound = () => {
     if (bgMusic.paused) {
-      bgMusic.play();
+      bgMusic.play().then(() => {
+        bgMusic.muted = false;
+        toggleBtn.classList.remove("paused");
+        toggleBtn.classList.add("playing");
+      });
     }
-    bgMusic.muted = false;
-    document.removeEventListener("click", enableSound);
     document.removeEventListener("touchstart", enableSound);
+    document.removeEventListener("click", enableSound);
   };
-
-  document.addEventListener("click", enableSound);
   document.addEventListener("touchstart", enableSound);
+  document.addEventListener("click", enableSound);
 });
 
-// === Countdown ===
+/* === Countdown === */
 function countdown() {
   const target = new Date("October 18, 2025 19:30:00").getTime();
   const interval = setInterval(() => {
@@ -45,7 +59,7 @@ function countdown() {
 }
 countdown();
 
-// === Mapa desbloqueable ===
+/* === Mapa desbloqueable === */
 document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.getElementById("mapOverlay");
   if (overlay) {

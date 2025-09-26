@@ -10,7 +10,13 @@
   </head>
   <body>
     <!-- Música de fondo -->
-    <audio id="bgMusic" src="music/XV-Tangled.mp3" autoplay loop playsinline></audio>
+    <audio id="bgMusic" src="music/XV-Tangled.mp3" loop muted playsinline></audio>
+
+    <!-- Botón flotante de música -->
+    <button id="musicToggle" class="music-btn paused" aria-label="Controlar música">
+      <span class="icon-play"></span>
+      <span class="icon-pause"></span>
+    </button>
 
     <div class="hero">
       <div class="particles-container" id="particlesContainer"></div>
@@ -25,11 +31,6 @@
       <div class="stars layer3"></div>
 
       <div class="invitation" id="invitation">
-        <div class="corner-decoration top-left"></div>
-        <div class="corner-decoration top-right"></div>
-        <div class="corner-decoration bottom-left"></div>
-        <div class="corner-decoration bottom-right"></div>
-
         <div class="photo-container">
           <div class="photo-polaroid glow sparkle">
             <img src="img/MariXV.jpg" alt="Mariana" />
@@ -42,9 +43,7 @@
         <div class="quote-container">
           <p class="legend">
             "Hoy doy un paso hacia una nueva etapa de mi vida, llena de sueños, esperanza y amor.
-            Quiero que seas parte de este momento tan especial, porque cada sonrisa compartida y cada abrazo
-            recibido han sido el reflejo del cariño que me ha acompañado hasta aquí. Gracias por caminar conmigo
-            en esta hermosa historia, que apenas comienza."
+            Quiero que seas parte de este momento tan especial..."
           </p>
         </div>
 
@@ -55,37 +54,25 @@
 
         <div class="details">
           <div class="detail-item">
-            <div class="detail-content">
-              <strong>📅 Fecha</strong>
-              <span>18 de Octubre, 2025</span>
-            </div>
+            <strong>📅 Fecha:</strong> 18 de Octubre, 2025
           </div>
           <div class="detail-item">
-            <div class="detail-content">
-              <strong>🕖 Hora</strong>
-              <span>7:30 PM</span>
-            </div>
+            <strong>🕖 Hora:</strong> 7:30 PM
           </div>
           <div class="detail-item">
-            <div class="detail-content">
-              <strong>📍 Lugar</strong>
-              <span>Finca La Armonía en Todos los Santos</span>
-            </div>
+            <strong>📍 Lugar:</strong> Finca La Armonía en Todos los Santos
           </div>
         </div>
 
         <div class="button-container">
-          <a class="btn" href="https://tusitio.com/rsvp" target="_blank" id="rsvpBtn">
-            <span class="btn-text">Confirmar Asistencia</span>
-            <div class="btn-ripple"></div>
-          </a>
+          <a class="btn" href="https://tusitio.com/rsvp" target="_blank">Confirmar Asistencia</a>
         </div>
 
         <div class="map-container">
           <h3 class="map-title">¿Cómo llegar?</h3>
           <div class="map-wrapper">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.841548083949!2d-74.08175!3d4.60971" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.841548083949!2d-74.08175!3d4.60971"
               width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
             </iframe>
             <div class="map-overlay" id="mapOverlay">
@@ -97,26 +84,15 @@
         <div class="countdown-container">
           <h3 class="countdown-title">Faltan:</h3>
           <div class="countdown" id="countdown">
-            <div class="countdown-item">
-              <span class="countdown-number" id="days">00</span>
-              <span class="countdown-label">Días</span>
-            </div>
-            <div class="countdown-item">
-              <span class="countdown-number" id="hours">00</span>
-              <span class="countdown-label">Horas</span>
-            </div>
-            <div class="countdown-item">
-              <span class="countdown-number" id="minutes">00</span>
-              <span class="countdown-label">Minutos</span>
-            </div>
-            <div class="countdown-item">
-              <span class="countdown-number" id="seconds">00</span>
-              <span class="countdown-label">Segundos</span>
-            </div>
+            <div><span id="days">00</span><span>Días</span></div>
+            <div><span id="hours">00</span><span>Horas</span></div>
+            <div><span id="minutes">00</span><span>Minutos</span></div>
+            <div><span id="seconds">00</span><span>Segundos</span></div>
           </div>
         </div>
       </div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>

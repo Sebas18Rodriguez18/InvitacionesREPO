@@ -4,27 +4,35 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>XV Años - Mariana</title>
+
+    <!-- Fuentes -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;700&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- 🎶 Música de fondo -->
     <audio id="bgMusic" autoplay loop>
       <source src="music/XV-Tangled.mp3" type="audio/mpeg">
       Tu navegador no soporta audio.
     </audio>
 
-    <div class="hero">
-      <div class="particles-container" id="particlesContainer"></div>
+    <!-- Botón flotante para activar música (se oculta si no es necesario) -->
+    <button id="playBtn" class="music-btn" style="display:none;">🎵 Activar Música</button>
 
+    <div class="hero">
+      <!-- Efectos -->
+      <div class="particles-container" id="particlesContainer"></div>
       <div class="lantern"></div>
       <div class="lantern delay1"></div>
       <div class="lantern delay2"></div>
       <div class="lantern delay3"></div>
-
       <div class="stars layer1"></div>
       <div class="stars layer2"></div>
       <div class="stars layer3"></div>
 
+      <!-- Invitación -->
       <div class="invitation" id="invitation">
         <div class="corner-decoration top-left"></div>
         <div class="corner-decoration top-right"></div>
@@ -54,6 +62,7 @@
           una noche llena de magia, luz y sueños por cumplir.
         </p>
 
+        <!-- Detalles -->
         <div class="details">
           <div class="detail-item">
             <div class="detail-content">
@@ -75,6 +84,7 @@
           </div>
         </div>
 
+        <!-- Botón de confirmación -->
         <div class="button-container">
           <a class="btn" href="https://tusitio.com/rsvp" target="_blank" id="rsvpBtn">
             <span class="btn-text">Confirmar Asistencia</span>
@@ -82,11 +92,12 @@
           </a>
         </div>
 
+        <!-- Mapa -->
         <div class="map-container">
           <h3 class="map-title">¿Cómo llegar?</h3>
           <div class="map-wrapper">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!..." 
+              src="https://www.google.com/maps/embed?pb=!1m18!..."
               width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
             </iframe>
             <div class="map-overlay" id="mapOverlay">
@@ -95,6 +106,7 @@
           </div>
         </div>
 
+        <!-- Cuenta regresiva -->
         <div class="countdown-container">
           <h3 class="countdown-title">Faltan:</h3>
           <div class="countdown" id="countdown">
@@ -118,6 +130,8 @@
         </div>
       </div>
     </div>
+
+    <!-- Scripts -->
     <script src="script.js"></script>
   </body>
 </html>

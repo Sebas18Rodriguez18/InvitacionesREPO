@@ -16,7 +16,7 @@ setInterval(spawnLantern, 2500);
 
 class CountdownTimer {
   constructor() {
-    this.targetDate = new Date(2025, 9, 18, 19, 30, 0, 0).getTime();
+    this.targetDate = new Date(2025, 9, 18, 19, 30, 0).getTime();
 
     this.daysEl = document.getElementById("days");
     this.hoursEl = document.getElementById("hours");
@@ -48,23 +48,36 @@ class CountdownTimer {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    this.daysEl.textContent = String(days).padStart(2,"0");
-    this.hoursEl.textContent = String(hours).padStart(2,"0");
-    this.minutesEl.textContent = String(minutes).padStart(2,"0");
-    this.secondsEl.textContent = String(seconds).padStart(2,"0");
+    this.daysEl.textContent = String(days).padStart(2, "0");
+    this.hoursEl.textContent = String(hours).padStart(2, "0");
+    this.minutesEl.textContent = String(minutes).padStart(2, "0");
+    this.secondsEl.textContent = String(seconds).padStart(2, "0");
   }
 }
 
 new CountdownTimer();
 
-const bgMusic = new Audio("music/XV-Tangled.mp3");
+const bgMusic = document.getElementById("bgMusic") || new Audio("music/XV-Tangled.mp3");
 bgMusic.loop = true;
 bgMusic.volume = 0.6;
 
 document.addEventListener("DOMContentLoaded", () => {
-  bgMusic.play().catch(() => {
-    document.body.addEventListener("click", () => {
-      bgMusic.play();
-    }, { once: true });
-  });
+  if (bgMusic.play) {
+    bgMusic.play().catch(() => {
+      let playBtn = document.getElementById("playBtn");
+      if (!playBtn) {
+        playBtn = document.createElement("button");
+        playBtn.id = "playBtn";
+        playBtn.textContent = "Activar Música";
+        playBtn.className = "music-btn";
+        document.body.appendChild(playBtn);
+      }
+      playBtn.style.display = "block";
+
+      playBtn.addEventListener("click", () => {
+        bgMusic.play();
+        playBtn.style.display = "none";
+      }, { once: true });
+    });
+  }
 });

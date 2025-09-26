@@ -1,83 +1,53 @@
-function spawnLantern() {
-  const lantern = document.createElement("div");
-  lantern.className = "lantern";
-  lantern.style.left = Math.random() * 90 + "%";
-  lantern.style.animationDuration = (12 + Math.random() * 8) + "s";
+// === Música de fondo ===
+window.addEventListener("DOMContentLoaded", () => {
+  const bgMusic = document.getElementById("bgMusic");
 
-  const size = 30 + Math.random() * 40;
-  lantern.style.width = size + "px";
-  lantern.style.height = size * 1.5 + "px";
-  lantern.style.opacity = 0.5 + Math.random() * 0.5;
+  // Intentar reproducir automáticamente
+  const playMusic = () => {
+    bgMusic.play().then(() => {
+      bgMusic.muted = false;
+      bgMusic.volume = 0.6;
+    }).catch((err) => {
+      console.log("Autoplay bloqueado por el navegador:", err);
+    });
+  };
 
-  document.querySelector(".hero").appendChild(lantern);
-  setTimeout(() => lantern.remove(), 15000);
-}
-setInterval(spawnLantern, 2500);
+  playMusic();
 
-class CountdownTimer {
-  constructor() {
-    this.targetDate = new Date(2025, 9, 18, 19, 30, 0).getTime();
+  // Intentar de nuevo en caso de que el navegador lo bloquee
+  document.addEventListener("click", () => {
+    if (bgMusic.paused) {
+      bgMusic.play();
+      bgMusic.muted = false;
+    }
+  });
+});
 
-    this.daysEl = document.getElementById("days");
-    this.hoursEl = document.getElementById("hours");
-    this.minutesEl = document.getElementById("minutes");
-    this.secondsEl = document.getElementById("seconds");
-
-    this.init();
-  }
-
-  init() {
-    this.updateCountdown();
-    setInterval(() => this.updateCountdown(), 1000);
-  }
-
-  updateCountdown() {
+// === Countdown ===
+function countdown() {
+  const target = new Date("October 18, 2025 19:30:00").getTime();
+  const interval = setInterval(() => {
     const now = new Date().getTime();
-    const distance = this.targetDate - now;
+    const distance = target - now;
 
     if (distance < 0) {
-      this.daysEl.textContent = "00";
-      this.hoursEl.textContent = "00";
-      this.minutesEl.textContent = "00";
-      this.secondsEl.textContent = "00";
+      clearInterval(interval);
+      document.getElementById("countdown").innerHTML = "¡Es hoy!";
       return;
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    this.daysEl.textContent = String(days).padStart(2, "0");
-    this.hoursEl.textContent = String(hours).padStart(2, "0");
-    this.minutesEl.textContent = String(minutes).padStart(2, "0");
-    this.secondsEl.textContent = String(seconds).padStart(2, "0");
-  }
+    document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+  }, 1000);
 }
+countdown();
 
-new CountdownTimer();
-
-const bgMusic = document.getElementById("bgMusic") || new Audio("music/XV-Tangled.mp3");
-bgMusic.loop = true;
-bgMusic.volume = 0.6;
-
+// === Mapa desbloqueable ===
 document.addEventListener("DOMContentLoaded", () => {
-  if (bgMusic.play) {
-    bgMusic.play().catch(() => {
-      let playBtn = document.getElementById("playBtn");
-      if (!playBtn) {
-        playBtn = document.createElement("button");
-        playBtn.id = "playBtn";
-        playBtn.textContent = "Activar Música";
-        playBtn.className = "music-btn";
-        document.body.appendChild(playBtn);
-      }
-      playBtn.style.display = "block";
-
-      playBtn.addEventListener("click", () => {
-        bgMusic.play();
-        playBtn.style.display = "none";
-      }, { once: true });
-    });
-  }
+  const overlay = document.getElementById("mapOverlay");
+  overlay.addEventListener("click", () => {
+    overlay.style.display = "none";
+  });
 });

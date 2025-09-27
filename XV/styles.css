@@ -1,6 +1,6 @@
 :root {
   --morado-oscuro: #1c0633;
-  --morado-real: #432263;
+  --morado-real: #7d3cff;
   --lavanda: #b497f7;
   --amatista: #cdb4f5;
   --dorado: #f6d365;
@@ -38,6 +38,7 @@ html, body {
   animation: twinkle 10s linear infinite;
   z-index: 0;
 }
+
 @keyframes twinkle {
   from { background-position: 0 0; }
   to { background-position: 100px 200px; }
@@ -93,18 +94,13 @@ html, body {
   margin-bottom: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .photo-polaroid img {
   width: 220px;
   height: auto;
   border-radius: 4px;
 }
-.photo-polaroid .caption {
-  display: block;
-  margin-top: 8px;
-  font-family: "Dancing Script", cursive;
-  font-size: 18px;
-  color: var(--morado-real);
-}
+
 .photo-polaroid:hover {
   transform: rotate(0) scale(1.05);
   box-shadow: 0 0 25px rgba(246, 211, 101, 0.6);
@@ -133,6 +129,7 @@ html, body {
   padding: 8px;
   border-radius: 12px;
 }
+
 .detail-item:hover {
   background: rgba(255,255,255,0.05);
   transform: translateX(5px);
@@ -151,10 +148,12 @@ html, body {
   position: relative;
   overflow: hidden;
 }
+
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 22px rgba(0,0,0,0.5), 0 0 16px var(--dorado-brillo);
 }
+
 .btn-ripple {
   position: absolute;
   top: 50%; left: 50%;
@@ -164,6 +163,7 @@ html, body {
   transform: translate(-50%, -50%);
   transition: width .6s, height .6s;
 }
+
 .btn:active .btn-ripple {
   width: 300px; height: 300px;
 }
@@ -171,8 +171,8 @@ html, body {
 .lantern {
   position: absolute;
   bottom: -100px;
-  width: 40px;
-  height: 60px;
+  width: 50px;
+  height: 70px;
   background: radial-gradient(var(--dorado), var(--dorado-brillo));
   border-radius: 12px;
   opacity: 0.8;
@@ -190,6 +190,7 @@ html, body {
   background: rgba(0,0,0,0.25);
   border-radius: 50%;
 }
+
 .lantern.delay1 { left: 15%; animation-delay: 2s; }
 .lantern.delay2 { left: 45%; animation-delay: 5s; }
 .lantern.delay3 { left: 75%; animation-delay: 8s; }
@@ -200,13 +201,6 @@ html, body {
   100% { transform: translate3d(-10px,-100vh,0) scale(1.2); opacity:0; }
 }
 
-.map-container { margin-top: 30px; text-align:center; }
-.map-container iframe {
-  border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-  margin-bottom: 12px;
-}
-
 .countdown-container {
   margin-top: 30px;
   padding: 20px;
@@ -214,12 +208,14 @@ html, body {
   border-radius: 18px;
   border: 1px solid rgba(246,211,101,0.3);
 }
+
 .countdown {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
+
 .countdown-item { text-align: center; }
 .countdown-number {
   font-size: 28px;
@@ -227,6 +223,7 @@ html, body {
   color: var(--dorado);
   text-shadow: 0 0 10px rgba(246,211,101,0.5);
 }
+
 .countdown-label {
   font-size: 14px;
   color: var(--lavanda);
@@ -239,7 +236,6 @@ html, body {
   .photo-polaroid img { width: 180px; }
 }
 
-/* === Botón de música flotante === */
 .music-btn {
   position: fixed;
   bottom: 20px;
@@ -254,12 +250,12 @@ html, body {
   z-index: 1000;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .music-btn:hover {
   transform: scale(1.1) rotate(8deg);
   box-shadow: 0 0 25px var(--dorado-brillo), 0 10px 25px rgba(0,0,0,0.5);
 }
 
-/* Íconos internos */
 .music-btn .icon-play,
 .music-btn .icon-pause {
   position: absolute;
@@ -279,9 +275,42 @@ html, body {
   -webkit-mask: url("data:image/svg+xml;utf8,<svg fill='black' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 19h4V5H6v14zm8-14v14h4V5h-4z'/></svg>");
 }
 
-/* Estados */
 .music-btn.paused .icon-play { display: block; }
 .music-btn.paused .icon-pause { display: none; }
-
 .music-btn.playing .icon-play { display: none; }
 .music-btn.playing .icon-pause { display: block; }
+
+#mailRain {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: rgba(58, 31, 93, 0.4);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.mail {
+  position: absolute;
+  top: -50px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--morado-real);
+  color: var(--dorado);
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px rgba(246,211,101,0.6);
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(350px) rotate(360deg); opacity: 0; }
+}

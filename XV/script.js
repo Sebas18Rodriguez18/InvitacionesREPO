@@ -3,11 +3,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.getElementById("musicToggle");
 
   bgMusic.volume = 0.6;
-
-  // Estado inicial
   toggleBtn.classList.add("paused");
 
-  // Al tocar el botón
   toggleBtn.addEventListener("click", () => {
     if (bgMusic.paused) {
       bgMusic.play().then(() => {
@@ -22,7 +19,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Reintento en primera interacción (para móviles)
   const enableSound = () => {
     if (bgMusic.paused) {
       bgMusic.play().then(() => {
@@ -36,9 +32,21 @@ window.addEventListener("DOMContentLoaded", () => {
   };
   document.addEventListener("touchstart", enableSound);
   document.addEventListener("click", enableSound);
+
+  const rainContainer = document.getElementById("mailRain");
+  const numMails = 15;
+
+  for (let i = 0; i < numMails; i++) {
+    const mail = document.createElement("div");
+    mail.classList.add("mail");
+    mail.innerText = "$";
+    mail.style.left = `${Math.random() * 100}%`;
+    mail.style.animationDuration = `${4 + Math.random() * 4}s`;
+    mail.style.animationDelay = `${Math.random() * 4}s`;
+    rainContainer.appendChild(mail);
+  }
 });
 
-/* === Countdown === */
 function countdown() {
   const target = new Date("October 18, 2025 19:30:00").getTime();
   const interval = setInterval(() => {
@@ -58,13 +66,3 @@ function countdown() {
   }, 1000);
 }
 countdown();
-
-/* === Mapa desbloqueable === */
-document.addEventListener("DOMContentLoaded", () => {
-  const overlay = document.getElementById("mapOverlay");
-  if (overlay) {
-    overlay.addEventListener("click", () => {
-      overlay.style.display = "none";
-    });
-  }
-});

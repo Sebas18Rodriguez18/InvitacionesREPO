@@ -1,2 +1,2 @@
 # invitacion
-Esste repositorio está dedicado para un solo uso que son las tarjetas de invitacion de unos XV
+Esste repositorio está dedicado para creación de invitaciones como XV's, BabyShowers, Cumpleaños etc.

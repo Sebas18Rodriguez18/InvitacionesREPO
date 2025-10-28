@@ -59,28 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   // ============================================
-  // BOTÓN VOLVER ARRIBA
-  // ============================================
-  const btnVolverArriba = document.getElementById("btnVolverArriba")
-
-  if (btnVolverArriba) {
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
-        btnVolverArriba.classList.add("visible")
-      } else {
-        btnVolverArriba.classList.remove("visible")
-      }
-    })
-
-    btnVolverArriba.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      })
-    })
-  }
-
-  // ============================================
   // CAMBIAR NAVBAR AL HACER SCROLL
   // ============================================
   const navbar = document.querySelector(".navbar-campestre")

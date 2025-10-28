@@ -1,679 +1,763 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Restaurante Campestre El Faro - Criadero Los 3</title>
-  <meta name="description" content="Restaurante Campestre El Faro - Auténtica comida campestre en Criadero Los 3. Disfruta de nuestros platos típicos, sancochos, asados y bebidas naturales.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- Added Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurante Campestre El Faro - Criadero Los 3</title>
+    <meta name="description" content="Restaurante Campestre El Faro - Auténtica comida campestre en Criadero Los 3. Disfruta de nuestros platos típicos, sancochos, asados y bebidas naturales.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  
-  <!-- Decoraciones campestres flotantes -->
-  <div class="decoraciones-fondo">
-    <div class="circulo circulo-naranja"></div>
-    <div class="circulo circulo-azul"></div>
-  </div>
 
-  <!-- Replaced emojis with Bootstrap Icons in navbar -->
-  <nav class="navbar-campestre">
-    <div class="navbar-contenido">
-      <div class="nav-brand">
-        <div class="logo-mini">
-          <img src="img/Logo_FARO.png" alt="El Faro">
-        </div>
-        <span class="nav-titulo">El Faro</span>
-      </div>
-      <div class="nav-links">
-        <a href="#platos" class="nav-link"><i class="bi bi-egg-fried"></i> Platos</a>
-        <a href="#bebidas" class="nav-link"><i class="bi bi-cup-straw"></i> Bebidas</a>
-        <a href="#porciones" class="nav-link"><i class="bi bi-basket"></i> Porciones</a>
-        <a href="#contacto" class="nav-link"><i class="bi bi-telephone"></i> Contacto</a>
-      </div>
-      <button id="btnMenu" class="btn-menu-mobile"><i class="bi bi-list"></i></button>
+    <div class="decoraciones-fondo">
+        <div class="circulo circulo-naranja"></div>
+        <div class="circulo circulo-azul"></div>
     </div>
-  </nav>
 
-  <!-- Improved hero section with icons -->
-  <header class="hero-campestre">
-    <div class="hero-overlay"></div>
-    <div class="hero-contenido">
-      <div class="logo-principal-container">
-        <div class="logo-circulo">
-          <img src="img/Logo_FARO.png" alt="Logo El Faro" class="logo-principal" onerror="this.style.display='none'">
-          <div class="logo-placeholder">
-            <i class="bi bi-fire"></i>
-          </div>
+    <nav class="navbar-campestre">
+        <div class="navbar-contenido">
+            <div class="nav-brand">
+                <div class="logo-mini">
+                    <img src="img/Logo_FARO.png" alt="El Faro">
+                </div>
+                <span class="nav-titulo">El Faro</span>
+            </div>
+            <div class="nav-links">
+                <a href="#platos" class="nav-link"><i class="bi bi-egg-fried"></i> Platos</a>
+                <a href="#bebidas" class="nav-link"><i class="bi bi-cup-straw"></i> Bebidas</a>
+                <a href="#porciones" class="nav-link"><i class="bi bi-basket"></i> Porciones</a>
+                <a href="#contacto" class="nav-link"><i class="bi bi-telephone"></i> Contacto</a>
+            </div>
+            <button id="btnMenu" class="btn-menu-mobile"><i class="bi bi-list"></i></button>
         </div>
-        <div class="logo-badge">
-          <span class="badge-text">Restaurante Campestre</span>
+    </nav>
+
+    <header class="hero-campestre">
+        <div class="hero-overlay"></div>
+        <div class="hero-contenido">
+            <div class="logo-principal-container">
+                <div class="logo-circulo">
+                    <img src="img/Logo_FARO.png" alt="Logo El Faro" class="logo-principal">
+                    <div class="logo-placeholder">
+                        <i class="bi bi-fire"></i>
+                    </div>
+                </div>
+                <br><br><br>
+                <div class="logo-badge">
+                    <span class="badge-text">Restaurante Campestre</span>
+                </div>
+            </div>
+
+            <h1 class="hero-titulo">
+                <span class="titulo-principal">El Faro</span>
+                <span class="titulo-subtitulo">Criadero Los 3</span>
+            </h1>
+
+            <p class="hero-descripcion">
+                Auténtica comida campestre colombiana<br>
+                <em>Sabores de finca, tradición y familia</em>
+            </p>
+
+            <div class="hero-features">
+                <div class="feature-item">
+                    <i class="bi bi-house-heart feature-icon"></i>
+                    <span class="feature-text">Ambiente Campestre</span>
+                </div>
+                <div class="feature-item">
+                    <i class="bi bi-person-hearts feature-icon"></i>
+                    <span class="feature-text">Comida Casera</span>
+                </div>
+                <div class="feature-item">
+                    <i class="bi bi-star-fill feature-icon"></i>
+                    <span class="feature-text">Calidad Garantizada</span>
+                </div>
+            </div>
+
+            <div class="hero-botones">
+                <a href="#platos" class="btn-principal">Ver Menú Completo</a>
+                <a href="#contacto" class="btn-secundario">Cómo Llegar</a>
+            </div>
+
+            <div class="scroll-indicador">
+                <span>Desliza para ver el menú</span>
+                <i class="bi bi-chevron-down scroll-arrow"></i>
+            </div>
         </div>
-      </div>
-      
-      <h1 class="hero-titulo">
-        <span class="titulo-principal">El Faro</span>
-        <span class="titulo-subtitulo">Criadero Los 3</span>
-      </h1>
-      
-      <p class="hero-descripcion">
-        Auténtica comida campestre colombiana<br>
-        <em>Sabores de finca, tradición y familia</em>
-      </p>
+    </header>
 
-      <div class="hero-features">
-        <div class="feature-item">
-          <i class="bi bi-house-heart feature-icon"></i>
-          <span class="feature-text">Ambiente Campestre</span>
+    <section class="seccion-bienvenida">
+        <div class="container">
+            <div class="bienvenida-contenido">
+                <div class="bienvenida-texto">
+                    <h2 class="titulo-decorado">
+                        Bienvenidos a El Faro
+                    </h2>
+                    <p class="descripcion-campestre">
+                        En el corazón del <strong>Criadero Los 3</strong>, te ofrecemos una experiencia gastronómica única
+                        donde los sabores tradicionales de la finca se encuentran con la calidez de un hogar campestre.
+                        Cada plato es preparado con dedicación y los mejores ingredientes frescos.
+                    </p>
+                    <div class="caracteristicas-grid">
+                        <div class="caracteristica">
+                            <i class="bi bi-bowl-hot-fill caracteristica-icono"></i>
+                            <h4>Platos Típicos</h4>
+                            <p>Recetas tradicionales colombianas</p>
+                        </div>
+                        <div class="caracteristica">
+                            <i class="bi bi-flower2 caracteristica-icono"></i>
+                            <h4>Ingredientes Frescos</h4>
+                            <p>De la finca a tu mesa</p>
+                        </div>
+                        <div class="caracteristica">
+                            <i class="bi bi-people-fill caracteristica-icono"></i>
+                            <h4>Para Toda la Familia</h4>
+                            <p>Ambiente acogedor y familiar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="feature-item">
-          <i class="bi bi-person-hearts feature-icon"></i>
-          <span class="feature-text">Comida Casera</span>
+    </section>
+
+    <main class="contenido-principal">
+        <div class="container">
+
+            <section id="platos" class="seccion-menu">
+                <div class="titulo-seccion-contenedor">
+                    <h2 class="titulo-seccion">
+                        <i class="bi bi-egg-fried icono-titulo"></i>
+                        Platos Fuertes
+                        <span class="decoracion-linea"></span>
+                    </h2>
+                    <p class="subtitulo-seccion">Los sabores que enamoran</p>
+                </div>
+
+                <div class="grid-platos">
+                    <div class="tarjeta-plato">
+                        <div class="plato-imagen-container">
+                            <img src="img/mondongo.jpg" alt="Mondongo" class="plato-imagen">
+                            <div class="precio-overlay">$ 25.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Mondongo</h3>
+                            <p class="plato-descripcion">Sopa, arroz, tostada, ensalada</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-plato">
+                        <div class="plato-imagen-container">
+                            <img src="img/chuleta-pollo.jpg" alt="Chuleta de Pollo" class="plato-imagen">
+                            <div class="precio-overlay">$ 30.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Chuleta de Pollo</h3>
+                            <p class="plato-descripcion">Arroz, papa francesa o yuca, ensalada</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-plato">
+                        <div class="plato-imagen-container">
+                            <img src="img/chuleta-cerdo.jpg" alt="Chuleta de Cerdo" class="plato-imagen">
+                            <div class="precio-overlay">$ 30.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Chuleta de Cerdo</h3>
+                            <p class="plato-descripcion">Arroz, papa francesa o yuca, ensalada</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-plato">
+                        <div class="plato-imagen-container">
+                            <img src="img/asado-cerdo.jpg" alt="Asado de Cerdo" class="plato-imagen">
+                            <div class="precio-overlay">$ 35.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Asado de Cerdo</h3>
+                            <p class="plato-descripcion">Arroz, papa francesa o yuca, ensalada, salsa</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-plato">
+                        <div class="plato-imagen-container">
+                            <img src="img/asado-pollo.jpg" alt="Asado de Pollo" class="plato-imagen">
+                            <div class="precio-overlay">$ 35.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Asado de Pollo</h3>
+                            <p class="plato-descripcion">Arroz, papa francesa o yuca, ensalada, salsa</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-plato destacado">
+                        <div class="plato-imagen-container">
+                            <img src="img/churrasco.jpg" alt="Churrasco" class="plato-imagen">
+                            <div class="precio-overlay">$ 40.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Churrasco</h3>
+                            <p class="plato-descripcion">Arroz, papa francesa o yuca, ensalada</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-plato">
+                        <div class="plato-imagen-container">
+                            <img src="img/frijol.jpg" alt="Bandeja de Frijol" class="plato-imagen">
+                            <div class="precio-overlay">$ 30.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Bandeja de Frijol</h3>
+                            <p class="plato-descripcion">Arroz, chicharrón, chorizo, huevo frito, arepa, aguacate, ensalada</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-plato">
+                        <div class="plato-imagen-container">
+                            <img src="img/sancocho.png" alt="Sancocho de Gallina" class="plato-imagen">
+                            <div class="precio-overlay">$ 30.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Sancocho de Gallina</h3>
+                            <p class="plato-descripcion">Caldo, arroz, presa de gallina, tostada, ensalada, aguacate</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-plato">
+                        <div class="plato-imagen-container">
+                            <img src="img/mixto.jpg" alt="Arroz Mixto" class="plato-imagen">
+                            <div class="precio-overlay">$ 28.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Arroz Mixto</h3>
+                            <p class="plato-descripcion">Caldo, arroz, papa francesa o yuca, tostada, ensalada, aguacate</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-plato destacado">
+                        <div class="plato-imagen-container">
+                            <img src="img/lasagna.jpg" alt="Lasaña" class="plato-imagen">
+                            <div class="precio-overlay">$ 30.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Lasaña</h3>
+                            <p class="plato-descripcion">Pan francés</p>
+                            <p class="plato-descripcion-encargo"><span>Solo por encargo!</span></p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-plato">
+                        <div class="plato-imagen-container">
+                            <img src="img/bagre.jpg" alt="Bagre en Salsa Italiana" class="plato-imagen">
+                            <div class="precio-overlay">$ 35.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Bagre en Salsa Italiana</h3>
+                            <p class="plato-descripcion">Arroz, papa francesa o yuca, ensalada, salsa</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-plato destacado">
+                        <div class="plato-imagen-container">
+                            <img src="img/Camarones.jpeg" alt="Cazuela de Camarones" class="plato-imagen">
+                            <div class="precio-overlay">$ 35.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Cazuela de Camarones</h3>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-plato destacado">
+                        <div class="plato-imagen-container">
+                            <img src="img/Mariscos.jpeg" alt="Cazuela de Mariscos" class="plato-imagen">
+                            <div class="precio-overlay">$ 35.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Cazuela de Mariscos</h3>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-plato">
+                        <div class="plato-imagen-container">
+                            <img src="img/Pollo-a-la-naranja.jpg" alt="Pollo a la Naranja" class="plato-imagen">
+                            <div class="precio-overlay">$ 25.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Pollo a la Naranja</h3>
+                            <p class="plato-descripcion">Arroz, tostada, ensalada de papa</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-plato destacado">
+                        <div class="plato-imagen-container">
+                            <img src="img/tilapia.jpeg" alt="Tilapia" class="plato-imagen">
+                            <div class="precio-overlay">$ 38.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Tilapia</h3>
+                            <p class="plato-descripcion">Arroz, tostada, ensalada</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-plato destacado">
+                        <div class="plato-imagen-container">
+                            <img src="img/lengua.jpeg" alt="Lengua a la Criolla" class="plato-imagen">
+                            <div class="precio-overlay">$ 28.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Lengua a la Criolla</h3>
+                            <p class="plato-descripcion">Arroz, tostada, ensalada</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-plato destacado">
+                        <div class="plato-imagen-container">
+                            <img src="img/sobre-barriga.jpeg" alt="Sobre Barriga" class="plato-imagen">
+                            <div class="precio-overlay">$ 30.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Sobre Barriga</h3>
+                            <p class="plato-descripcion">Arroz, tostada, ensalada</p>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-plato destacado">
+                        <div class="plato-imagen-container">
+                            <img src="img/cordon-blue.jpg" alt="Cordon Bleu" class="plato-imagen">
+                            <div class="precio-overlay">$ 30.000</div>
+                        </div>
+                        <div class="plato-contenido">
+                            <h3 class="plato-nombre">Cordon Bleu</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <div class="separador-campestre">
+                <span class="separador-linea"></span>
+                <i class="bi bi-flower1 separador-icono"></i>
+                <span class="separador-linea"></span>
+            </div>
+
+            <section id="bebidas" class="seccion-menu">
+                <div class="titulo-seccion-contenedor">
+                    <h2 class="titulo-seccion">
+                        <i class="bi bi-cup-straw icono-titulo"></i>
+                        Bebidas
+                        <span class="decoracion-linea"></span>
+                    </h2>
+                    <p class="subtitulo-seccion">Refresca tu paladar</p>
+                </div>
+
+                <div class="grid-bebidas">
+                    <div class="categoria-bebidas">
+                        <h3 class="categoria-titulo"><i class="bi bi-cup"></i> Gaseosas Personales</h3>
+                        <div class="lista-bebidas">
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Coca Cola Zero</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 6.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Coca Cola</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 6.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Agua Cristal</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 5.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Agua con Gas</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 5.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Hit Mora</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 5.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Hit Lulo</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 5.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Hit Naranja Piña</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 5.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Hit Tropical</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 5.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Hit Mango</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 5.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Manzana</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 5.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Colombiana</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 5.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Uva</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 5.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Bretaña</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 5.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="categoria-bebidas">
+                        <h3 class="categoria-titulo"><i class="bi bi-droplet-fill"></i> Con Alcohol</h3>
+                        <div class="lista-bebidas">
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Poker</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 5.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Aguila Ligth</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 5.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Club Colombia</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 6.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Aperit Like</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 8.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Tecate</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 6.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Andina</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 5.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Heineken</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 6.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Stella Artois</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 12.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Corona</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 12.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Smirnoff</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 12.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">JP Chenet Fizzy</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 15.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Four Loko</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 20.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="categoria-bebidas">
+                        <h3 class="categoria-titulo"><i class="bi bi-droplet-fill"></i> Jugos Naturales</h3>
+                        <div class="lista-bebidas">
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Jarra de Limonada</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 20.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Media Jarra de Limonada</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 10.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Vaso de Limonada</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 5.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Jarra de Masato</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 20.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Vaso de Masato</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 5.000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="categoria-bebidas">
+                        <h3 class="categoria-titulo"><i class="bi bi-cup-hot"></i> Grandes (1.5L)</h3>
+                        <div class="lista-bebidas">
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Coca Cola</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 12.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Colombiana</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 10.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Manzana</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 10.000</span>
+                            </div>
+                            <div class="item-bebida">
+                                <span class="bebida-nombre">Uva</span>
+                                <span class="bebida-puntos"></span>
+                                <span class="bebida-precio">$ 10.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="separador-campestre">
+                <span class="separador-linea"></span>
+                <i class="bi bi-flower1 separador-icono"></i>
+                <span class="separador-linea"></span>
+            </div>
+
+            <section id="porciones" class="seccion-menu">
+                <div class="titulo-seccion-contenedor">
+                    <h2 class="titulo-seccion">
+                        <i class="bi bi-basket icono-titulo"></i>
+                        Porciones
+                        <span class="decoracion-linea"></span>
+                    </h2>
+                    <p class="subtitulo-seccion">Para compartir o complementar</p>
+                </div>
+
+                <div class="grid-porciones">
+                    <div class="tarjeta-porcion">
+                        <i class="bi bi-bowl-hot porcion-icono"></i>
+                        <h3 class="porcion-nombre">Porción de Sancocho</h3>
+                        <span class="porcion-precio">$ 7.000</span>
+                    </div>
+                    <div class="tarjeta-porcion">
+                        <i class="bi bi-cup-hot porcion-icono"></i>
+                        <h3 class="porcion-nombre">Porción de Mondongo</h3>
+                        <span class="porcion-precio">$ 12.000</span>
+                    </div>
+                    <div class="tarjeta-porcion">
+                        <i class="bi bi-egg-fried porcion-icono"></i>
+                        <h3 class="porcion-nombre">Porción de Frijol</h3>
+                        <span class="porcion-precio">$ 7.000</span>
+                    </div>
+                    <div class="tarjeta-porcion">
+                        <i class="bi bi-circle-fill porcion-icono"></i>
+                        <h3 class="porcion-nombre">Porción de Papa Criolla</h3>
+                        <span class="porcion-precio">$ 8.000</span>
+                    </div>
+                    <div class="tarjeta-porcion">
+                        <i class="bi bi-square-fill porcion-icono"></i>
+                        <h3 class="porcion-nombre">Porción de Tostada</h3>
+                        <span class="porcion-precio">$ 8.000</span>
+                    </div>
+                    <div class="tarjeta-porcion">
+                        <i class="bi bi-grid-3x3-gap-fill porcion-icono"></i>
+                        <h3 class="porcion-nombre">Porción de Arroz</h3>
+                        <span class="porcion-precio">$ 3.000</span>
+                    </div>
+                    <div class="tarjeta-porcion">
+                        <i class="bi bi-egg porcion-icono"></i>
+                        <h3 class="porcion-nombre">Porción de Nuggets</h3>
+                        <span class="porcion-precio">$ 15.000</span>
+                    </div>
+                    <div class="tarjeta-porcion">
+                        <i class="bi bi-hexagon-fill porcion-icono"></i>
+                        <h3 class="porcion-nombre">Porción de Yuca</h3>
+                        <span class="porcion-precio">$ 8.000</span>
+                    </div>
+                </div>
+            </section>
+
         </div>
-        <div class="feature-item">
-          <i class="bi bi-star-fill feature-icon"></i>
-          <span class="feature-text">Calidad Garantizada</span>
+    </main>
+
+    <section id="contacto" class="seccion-contacto">
+        <div class="container">
+            <div class="contacto-grid">
+
+                <div class="contacto-info">
+                    <h2 class="titulo-contacto">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        Visítanos
+                    </h2>
+                    <p class="descripcion-contacto">
+                        Te esperamos en nuestro acogedor restaurante campestre.
+                        Un espacio perfecto para disfrutar en familia de los mejores sabores tradicionales.
+                    </p>
+
+                    <div class="info-detalles">
+                        <div class="detalle-item">
+                            <i class="bi bi-house-door-fill detalle-icono"></i>
+                            <div class="detalle-contenido">
+                                <h4>Ubicación</h4>
+                                <p>San Pedro Valle<br>Carrera sexta</p>
+                            </div>
+                        </div>
+
+                        <div class="detalle-item">
+                            <i class="bi bi-clock-fill detalle-icono"></i>
+                            <div class="detalle-contenido">
+                                <h4>Horario de Atención</h4>
+                                <p>Sábado - Domingo - Festivos<br>12:00 PM - 5:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="detalle-item">
+                            <i class="bi bi-telephone-fill detalle-icono"></i>
+                            <div class="detalle-contenido">
+                                <h4>Teléfono</h4>
+                                <p><a href="tel:+573185657148">318 5657148</a></p>
+                            </div>
+                        </div>
+
+                        <div class="detalle-item">
+                            <i class="bi bi-credit-card-fill detalle-icono"></i>
+                            <div class="detalle-contenido">
+                                <h4>Métodos de Pago</h4>
+                                <p>Efectivo • Tarjetas • Transferencias</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="redes-sociales">
+                        <a href="https://www.tiktok.com/@restaurante_el_faro?_t=ZS-90uycKBxIKF&_r=1" class="red-social tiktok" target="_blank"><i class="bi bi-tiktok"></i> TikTok</a>
+                        <a href="https://www.instagram.com/elfarorestaurantecampestre" class="red-social instagram" target="_blank"><i class="bi bi-instagram"></i> Instagram</a>
+                        <a href="https://wa.me/573185657148" class="red-social whatsapp" target="_blank"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="contacto-mapa">
+                    <div class="mapa-decoracion">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127363.25617449403!2d-76.22822289999999!3d3.9994992999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e39c300239dcb5d%3A0xc33d1821d6cc66bf!2sRestaurante%20Campestre%20El%20Faro!5e0!3m2!1ses-419!2sco!4v1761451647791!5m2!1ses-419!2sco"
+                            width="100%"
+                            height="450"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            class="mapa-iframe">
+                        </iframe>
+                    </div>
+                    <a href="https://maps.google.com" target="_blank" class="btn-direcciones">
+                        <i class="bi bi-map"></i> Abrir en Google Maps
+                    </a>
+                </div>
+
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="hero-botones">
-        <a href="#platos" class="btn-principal">Ver Menú Completo</a>
-        <a href="#contacto" class="btn-secundario">Cómo Llegar</a>
-      </div>
+    <footer class="footer-campestre">
+        <div class="container">
+            <div class="footer-contenido">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="footer-logo-circulo">
+                            <img src="img/Logo_FARO.png" alt="El Faro" onerror="this.style.display='none'">
+                            <div class="footer-logo-placeholder"><i class="bi bi-fire"></i></div>
+                        </div>
+                        <h3>Restaurante Campestre<br>El Faro</h3>
+                    </div>
+                    <p class="footer-desc">
+                        Tradición, sabor y calidez campestre desde hace más de 10 años.
+                        Un pedacito de finca en cada plato.
+                    </p>
+                </div>
 
-      <div class="scroll-indicador">
-        <span>Desliza para ver el menú</span>
-        <i class="bi bi-chevron-down scroll-arrow"></i>
-      </div>
-    </div>
-  </header>
+                <div class="footer-col">
+                    <h4>Menú</h4>
+                    <ul class="footer-links">
+                        <li><a href="#platos"><i class="bi bi-egg-fried"></i> Platos Fuertes</a></li>
+                        <li><a href="#bebidas"><i class="bi bi-cup-straw"></i> Bebidas</a></li>
+                        <li><a href="#porciones"><i class="bi bi-basket"></i> Porciones</a></li>
+                        <li><a href="#contacto"><i class="bi bi-geo-alt"></i> Ubicación</a></li>
+                    </ul>
+                </div>
 
-  <!-- Updated welcome section with icons -->
-  <section class="seccion-bienvenida">
-    <div class="container">
-      <div class="bienvenida-contenido">
-        <div class="bienvenida-texto">
-          <h2 class="titulo-decorado">
-            Bienvenidos a El Faro
-          </h2>
-          <p class="descripcion-campestre">
-            En el corazón del <strong>Criadero Los 3</strong>, te ofrecemos una experiencia gastronómica única 
-            donde los sabores tradicionales de la finca se encuentran con la calidez de un hogar campestre. 
-            Cada plato es preparado con dedicación y los mejores ingredientes frescos.
-          </p>
-          <div class="caracteristicas-grid">
-            <div class="caracteristica">
-              <i class="bi bi-bowl-hot-fill caracteristica-icono"></i>
-              <h4>Platos Típicos</h4>
-              <p>Recetas tradicionales colombianas</p>
+                <div class="footer-col">
+                    <h4>Horarios</h4>
+                    <ul class="footer-info">
+                        <li><i class="bi bi-calendar-check"></i> Sábado - Domingo - Festivos</li>
+                        <li><i class="bi bi-clock"></i> 12:00 PM - 5:00 PM</li>
+                        <li><i class="bi bi-telephone"></i> 318 5657148</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Síguenos</h4>
+                    <div class="footer-redes">
+                        <a href="https://www.tiktok.com/@restaurante_el_faro?_t=ZS-90uycKBxIKF&_r=1" class="red-social tiktok" target="_blank"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.instagram.com/elfarorestaurantecampestre" class="red-social instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="https://wa.me/573185657148" class="red-social whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                    <p class="footer-cta">
+                        <i class="bi bi-star-fill"></i> ¡Déjanos tu reseña!<br>
+                        Tu opinión es importante
+                    </p>
+                </div>
             </div>
-            <div class="caracteristica">
-              <i class="bi bi-flower2 caracteristica-icono"></i>
-              <h4>Ingredientes Frescos</h4>
-              <p>De la finca a tu mesa</p>
+
+            <div class="footer-bottom">
+                <div class="footer-copy">
+                    © 2025 Restaurante Campestre El Faro - Criadero Los 3
+                </div>
+                <div class="footer-credits">
+                    Hecho con <i class="bi bi-heart-fill"></i> para amantes de la buena comida campestre
+                </div>
             </div>
-            <div class="caracteristica">
-              <i class="bi bi-people-fill caracteristica-icono"></i>
-              <h4>Para Toda la Familia</h4>
-              <p>Ambiente acogedor y familiar</p>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <main class="contenido-principal">
-    <div class="container">
+    <a href="https://wa.me/573185657148" class="btn-whatsapp-flotante" target="_blank" title="Contáctanos por WhatsApp">
+        <i class="bi bi-whatsapp whatsapp-icon"></i>
+        <span class="whatsapp-texto">¿Tienes dudas?</span>
+    </a>
 
-      <!-- Updated section titles with icons -->
-      <section id="platos" class="seccion-menu">
-        <div class="titulo-seccion-contenedor">
-          <h2 class="titulo-seccion">
-            <i class="bi bi-egg-fried icono-titulo"></i>
-            Platos Fuertes
-            <span class="decoracion-linea"></span>
-          </h2>
-          <p class="subtitulo-seccion">Los sabores que enamoran</p>
-        </div>
+    <button id="btnVolverArriba" class="btn-volver-arriba" title="Volver arriba">
+        <i class="bi bi-arrow-up"></i>
+    </button>
 
-        <div class="grid-platos">
-          <!-- Removed order buttons, kept only dish display -->
-          <div class="tarjeta-plato">
-            <div class="plato-imagen-container">
-              <img src="img/mondongo-colombiano-sopa.jpg" alt="Mondongo" class="plato-imagen" 
-                   onerror="this.src='https://via.placeholder.com/400x300/ff7f00/ffffff?text=Mondongo'">
-              <div class="plato-badge">Tradicional</div>
-              <div class="precio-overlay">$ 25.000</div>
-            </div>
-            <div class="plato-contenido">
-              <h3 class="plato-nombre">Mondongo</h3>
-              <p class="plato-descripcion">Sopa, arroz, tostada, ensalada</p>
-            </div>
-          </div>
-
-          <div class="tarjeta-plato">
-            <div class="plato-imagen-container">
-              <img src="img/chuleta-de-pollo-con-arroz.jpg" alt="Chuleta de Pollo" class="plato-imagen"
-                   onerror="this.src='https://via.placeholder.com/400x300/ff7f00/ffffff?text=Chuleta+Pollo'">
-              <div class="plato-badge popular">Popular</div>
-              <div class="precio-overlay">$ 30.000</div>
-            </div>
-            <div class="plato-contenido">
-              <h3 class="plato-nombre">Chuleta de Pollo</h3>
-              <p class="plato-descripcion">Arroz, papa francesa o yuca, ensalada</p>
-            </div>
-          </div>
-
-          <div class="tarjeta-plato">
-            <div class="plato-imagen-container">
-              <img src="img/chuleta-de-cerdo-con-arroz.jpg" alt="Chuleta de Cerdo" class="plato-imagen"
-                   onerror="this.src='https://via.placeholder.com/400x300/ff7f00/ffffff?text=Chuleta+Cerdo'">
-              <div class="precio-overlay">$ 30.000</div>
-            </div>
-            <div class="plato-contenido">
-              <h3 class="plato-nombre">Chuleta de Cerdo</h3>
-              <p class="plato-descripcion">Arroz, papa francesa o yuca, ensalada</p>
-            </div>
-          </div>
-
-          <div class="tarjeta-plato">
-            <div class="plato-imagen-container">
-              <img src="img/asado-de-cerdo-colombiano.jpg" alt="Asado de Cerdo" class="plato-imagen"
-                   onerror="this.src='https://via.placeholder.com/400x300/ff7f00/ffffff?text=Asado+Cerdo'">
-              <div class="plato-badge especial">Especial</div>
-              <div class="precio-overlay">$ 35.000</div>
-            </div>
-            <div class="plato-contenido">
-              <h3 class="plato-nombre">Asado de Cerdo</h3>
-              <p class="plato-descripcion">Arroz, papa francesa o yuca, ensalada, salsa</p>
-            </div>
-          </div>
-
-          <div class="tarjeta-plato">
-            <div class="plato-imagen-container">
-              <img src="img/asado-de-pollo-con-arroz.jpg" alt="Asado de Pollo" class="plato-imagen"
-                   onerror="this.src='https://via.placeholder.com/400x300/ff7f00/ffffff?text=Asado+Pollo'">
-              <div class="plato-badge especial">Especial</div>
-              <div class="precio-overlay">$ 35.000</div>
-            </div>
-            <div class="plato-contenido">
-              <h3 class="plato-nombre">Asado de Pollo</h3>
-              <p class="plato-descripcion">Arroz, papa francesa o yuca, ensalada, salsa</p>
-            </div>
-          </div>
-
-          <div class="tarjeta-plato destacado">
-            <div class="plato-imagen-container">
-              <img src="img/churrasco-colombiano-con-arroz.jpg" alt="Churrasco" class="plato-imagen"
-                   onerror="this.src='https://via.placeholder.com/400x300/ff7f00/ffffff?text=Churrasco'">
-              <div class="plato-badge premium">Premium</div>
-              <div class="precio-overlay">$ 40.000</div>
-            </div>
-            <div class="plato-contenido">
-              <h3 class="plato-nombre">Churrasco</h3>
-              <p class="plato-descripcion">Arroz, papa francesa o yuca, ensalada</p>
-            </div>
-          </div>
-
-          <div class="tarjeta-plato">
-            <div class="plato-imagen-container">
-              <img src="img/bandeja-paisa-con-frijoles.jpg" alt="Bandeja de Frijol" class="plato-imagen"
-                   onerror="this.src='https://via.placeholder.com/400x300/ff7f00/ffffff?text=Bandeja+Frijol'">
-              <div class="plato-badge popular">Popular</div>
-              <div class="precio-overlay">$ 30.000</div>
-            </div>
-            <div class="plato-contenido">
-              <h3 class="plato-nombre">Bandeja de Frijol</h3>
-              <p class="plato-descripcion">Arroz, chicharrón, chorizo, huevo frito, arepa, aguacate, ensalada</p>
-            </div>
-          </div>
-
-          <div class="tarjeta-plato">
-            <div class="plato-imagen-container">
-              <img src="img/sancocho-de-gallina-colombiano.jpg" alt="Sancocho de Gallina" class="plato-imagen"
-                   onerror="this.src='https://via.placeholder.com/400x300/ff7f00/ffffff?text=Sancocho'">
-              <div class="plato-badge">Tradicional</div>
-              <div class="precio-overlay">$ 30.000</div>
-            </div>
-            <div class="plato-contenido">
-              <h3 class="plato-nombre">Sancocho de Gallina</h3>
-              <p class="plato-descripcion">Caldo, arroz, presa de gallina, tostada, ensalada, aguacate</p>
-            </div>
-          </div>
-
-          <div class="tarjeta-plato">
-            <div class="plato-imagen-container">
-              <img src="img/arroz-mixto-colombiano.jpg" alt="Arroz Mixto" class="plato-imagen"
-                   onerror="this.src='https://via.placeholder.com/400x300/ff7f00/ffffff?text=Arroz+Mixto'">
-              <div class="precio-overlay">$ 28.000</div>
-            </div>
-            <div class="plato-contenido">
-              <h3 class="plato-nombre">Arroz Mixto</h3>
-              <p class="plato-descripcion">Caldo, arroz, papa francesa o yuca, tostada, ensalada, aguacate</p>
-            </div>
-          </div>
-
-          <div class="tarjeta-plato">
-            <div class="plato-imagen-container">
-              <img src="img/lasa-a-italiana.jpg" alt="Lasaña" class="plato-imagen"
-                   onerror="this.src='https://via.placeholder.com/400x300/ff7f00/ffffff?text=Lasaña'">
-              <div class="precio-overlay">$ 30.000</div>
-            </div>
-            <div class="plato-contenido">
-              <h3 class="plato-nombre">Lasaña</h3>
-              <p class="plato-descripcion">Pan francés</p>
-            </div>
-          </div>
-
-          <div class="tarjeta-plato">
-            <div class="plato-imagen-container">
-              <img src="img/bagre-en-salsa-italiana.jpg" alt="Bagre en Salsa Italiana" class="plato-imagen"
-                   onerror="this.src='https://via.placeholder.com/400x300/ff7f00/ffffff?text=Bagre'">
-              <div class="plato-badge especial">Especial</div>
-              <div class="precio-overlay">$ 35.000</div>
-            </div>
-            <div class="plato-contenido">
-              <h3 class="plato-nombre">Bagre en Salsa Italiana</h3>
-              <p class="plato-descripcion">Arroz, papa francesa o yuca, ensalada, salsa</p>
-            </div>
-          </div>
-
-          <div class="tarjeta-plato">
-            <div class="plato-imagen-container">
-              <img src="img/pollo-a-la-naranja.jpg" alt="Pollo a la Naranja" class="plato-imagen"
-                   onerror="this.src='https://via.placeholder.com/400x300/ff7f00/ffffff?text=Pollo+Naranja'">
-              <div class="precio-overlay">$ 25.000</div>
-            </div>
-            <div class="plato-contenido">
-              <h3 class="plato-nombre">Pollo a la Naranja</h3>
-              <p class="plato-descripcion">Arroz, tostada, ensalada de papa</p>
-            </div>
-          </div>
-
-          <div class="tarjeta-plato destacado">
-            <div class="plato-imagen-container">
-              <img src="img/tilapia-frita-con-arroz.jpg" alt="Tilapia" class="plato-imagen"
-                   onerror="this.src='https://via.placeholder.com/400x300/ff7f00/ffffff?text=Tilapia'">
-              <div class="plato-badge premium">Premium</div>
-              <div class="precio-overlay">$ 38.000</div>
-            </div>
-            <div class="plato-contenido">
-              <h3 class="plato-nombre">Tilapia</h3>
-              <p class="plato-descripcion">Arroz, tostada, ensalada</p>
-            </div>
-          </div>
-
-          <div class="tarjeta-plato">
-            <div class="plato-imagen-container">
-              <img src="img/lengua-a-la-criolla.jpg" alt="Lengua a la Criolla" class="plato-imagen"
-                   onerror="this.src='https://via.placeholder.com/400x300/ff7f00/ffffff?text=Lengua+Criolla'">
-              <div class="precio-overlay">$ 28.000</div>
-            </div>
-            <div class="plato-contenido">
-              <h3 class="plato-nombre">Lengua a la Criolla</h3>
-              <p class="plato-descripcion">Arroz, tostada, ensalada</p>
-            </div>
-          </div>
-
-          <div class="tarjeta-plato">
-            <div class="plato-imagen-container">
-              <img src="img/sobre-barriga-colombiana.jpg" alt="Sobre Barriga" class="plato-imagen"
-                   onerror="this.src='https://via.placeholder.com/400x300/ff7f00/ffffff?text=Sobre+Barriga'">
-              <div class="precio-overlay">$ 30.000</div>
-            </div>
-            <div class="plato-contenido">
-              <h3 class="plato-nombre">Sobre Barriga</h3>
-              <p class="plato-descripcion">Arroz, tostada, ensalada</p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Updated separator with icons -->
-      <div class="separador-campestre">
-        <span class="separador-linea"></span>
-        <i class="bi bi-flower1 separador-icono"></i>
-        <span class="separador-linea"></span>
-      </div>
-
-      <!-- Updated beverages section -->
-      <section id="bebidas" class="seccion-menu">
-        <div class="titulo-seccion-contenedor">
-          <h2 class="titulo-seccion">
-            <i class="bi bi-cup-straw icono-titulo"></i>
-            Bebidas
-            <span class="decoracion-linea"></span>
-          </h2>
-          <p class="subtitulo-seccion">Refresca tu paladar</p>
-        </div>
-
-        <div class="grid-bebidas">
-          <div class="categoria-bebidas">
-            <h3 class="categoria-titulo"><i class="bi bi-cup"></i> Gaseosas Personales</h3>
-            <div class="lista-bebidas">
-              <div class="item-bebida">
-                <span class="bebida-nombre">Coca Cola Zero</span>
-                <span class="bebida-puntos"></span>
-                <span class="bebida-precio">$ 6.000</span>
-              </div>
-              <div class="item-bebida">
-                <span class="bebida-nombre">Coca Cola</span>
-                <span class="bebida-puntos"></span>
-                <span class="bebida-precio">$ 6.000</span>
-              </div>
-              <div class="item-bebida">
-                <span class="bebida-nombre">Agua Cristal</span>
-                <span class="bebida-puntos"></span>
-                <span class="bebida-precio">$ 5.000</span>
-              </div>
-              <div class="item-bebida">
-                <span class="bebida-nombre">Agua con Gas</span>
-                <span class="bebida-puntos"></span>
-                <span class="bebida-precio">$ 5.000</span>
-              </div>
-              <div class="item-bebida">
-                <span class="bebida-nombre">Hit Mora</span>
-                <span class="bebida-puntos"></span>
-                <span class="bebida-precio">$ 5.000</span>
-              </div>
-              <div class="item-bebida">
-                <span class="bebida-nombre">Hit Lulo</span>
-                <span class="bebida-puntos"></span>
-                <span class="bebida-precio">$ 5.000</span>
-              </div>
-              <div class="item-bebida">
-                <span class="bebida-nombre">Hit Naranja Piña</span>
-                <span class="bebida-puntos"></span>
-                <span class="bebida-precio">$ 5.000</span>
-              </div>
-              <div class="item-bebida">
-                <span class="bebida-nombre">Hit Tropical</span>
-                <span class="bebida-puntos"></span>
-                <span class="bebida-precio">$ 5.000</span>
-              </div>
-              <div class="item-bebida">
-                <span class="bebida-nombre">Hit Mango</span>
-                <span class="bebida-puntos"></span>
-                <span class="bebida-precio">$ 5.000</span>
-              </div>
-              <div class="item-bebida">
-                <span class="bebida-nombre">Manzana</span>
-                <span class="bebida-puntos"></span>
-                <span class="bebida-precio">$ 5.000</span>
-              </div>
-              <div class="item-bebida">
-                <span class="bebida-nombre">Colombiana</span>
-                <span class="bebida-puntos"></span>
-                <span class="bebida-precio">$ 5.000</span>
-              </div>
-              <div class="item-bebida">
-                <span class="bebida-nombre">Uva</span>
-                <span class="bebida-puntos"></span>
-                <span class="bebida-precio">$ 5.000</span>
-              </div>
-              <div class="item-bebida">
-                <span class="bebida-nombre">Bretaña</span>
-                <span class="bebida-puntos"></span>
-                <span class="bebida-precio">$ 5.000</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="categoria-bebidas">
-            <h3 class="categoria-titulo"><i class="bi bi-cup-hot"></i> Grandes (1.5L)</h3>
-            <div class="lista-bebidas">
-              <div class="item-bebida">
-                <span class="bebida-nombre">Coca Cola</span>
-                <span class="bebida-puntos"></span>
-                <span class="bebida-precio">$ 12.000</span>
-              </div>
-              <div class="item-bebida">
-                <span class="bebida-nombre">Colombiana</span>
-                <span class="bebida-puntos"></span>
-                <span class="bebida-precio">$ 10.000</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="categoria-bebidas destacada">
-            <h3 class="categoria-titulo"><i class="bi bi-droplet-fill"></i> Jugos Naturales</h3>
-            <div class="lista-bebidas">
-              <div class="item-bebida especial">
-                <span class="bebida-nombre">Jarra de Limonada</span>
-                <span class="bebida-puntos"></span>
-                <span class="bebida-precio">$ 20.000</span>
-              </div>
-              <div class="item-bebida especial">
-                <span class="bebida-nombre">Media Jarra de Limonada</span>
-                <span class="bebida-puntos"></span>
-                <span class="bebida-precio">$ 10.000</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="separador-campestre">
-        <span class="separador-linea"></span>
-        <i class="bi bi-flower1 separador-icono"></i>
-        <span class="separador-linea"></span>
-      </div>
-
-      <!-- Updated portions section -->
-      <section id="porciones" class="seccion-menu">
-        <div class="titulo-seccion-contenedor">
-          <h2 class="titulo-seccion">
-            <i class="bi bi-basket icono-titulo"></i>
-            Porciones
-            <span class="decoracion-linea"></span>
-          </h2>
-          <p class="subtitulo-seccion">Para compartir o complementar</p>
-        </div>
-
-        <div class="grid-porciones">
-          <div class="tarjeta-porcion">
-            <i class="bi bi-bowl-hot porcion-icono"></i>
-            <h3 class="porcion-nombre">Porción de Sancocho</h3>
-            <span class="porcion-precio">$ 7.000</span>
-          </div>
-          <div class="tarjeta-porcion">
-            <i class="bi bi-cup-hot porcion-icono"></i>
-            <h3 class="porcion-nombre">Porción de Mondongo</h3>
-            <span class="porcion-precio">$ 12.000</span>
-          </div>
-          <div class="tarjeta-porcion">
-            <i class="bi bi-egg-fried porcion-icono"></i>
-            <h3 class="porcion-nombre">Porción de Frijol</h3>
-            <span class="porcion-precio">$ 7.000</span>
-          </div>
-          <div class="tarjeta-porcion">
-            <i class="bi bi-circle-fill porcion-icono"></i>
-            <h3 class="porcion-nombre">Porción de Papa Criolla</h3>
-            <span class="porcion-precio">$ 8.000</span>
-          </div>
-          <div class="tarjeta-porcion">
-            <i class="bi bi-square-fill porcion-icono"></i>
-            <h3 class="porcion-nombre">Porción de Tostada</h3>
-            <span class="porcion-precio">$ 8.000</span>
-          </div>
-          <div class="tarjeta-porcion">
-            <i class="bi bi-grid-3x3-gap-fill porcion-icono"></i>
-            <h3 class="porcion-nombre">Porción de Arroz</h3>
-            <span class="porcion-precio">$ 3.000</span>
-          </div>
-          <div class="tarjeta-porcion">
-            <i class="bi bi-egg porcion-icono"></i>
-            <h3 class="porcion-nombre">Porción de Nuggets</h3>
-            <span class="porcion-precio">$ 15.000</span>
-          </div>
-          <div class="tarjeta-porcion">
-            <i class="bi bi-hexagon-fill porcion-icono"></i>
-            <h3 class="porcion-nombre">Porción de Yuca</h3>
-            <span class="porcion-precio">$ 8.000</span>
-          </div>
-        </div>
-      </section>
-
-    </div>
-  </main>
-
-  <!-- Updated contact section with icons -->
-  <section id="contacto" class="seccion-contacto">
-    <div class="container">
-      <div class="contacto-grid">
-        
-        <div class="contacto-info">
-          <h2 class="titulo-contacto">
-            <i class="bi bi-geo-alt-fill"></i>
-            Visítanos
-          </h2>
-          <p class="descripcion-contacto">
-            Te esperamos en nuestro acogedor restaurante campestre en el Criadero Los 3. 
-            Un espacio perfecto para disfrutar en familia de los mejores sabores tradicionales.
-          </p>
-
-          <div class="info-detalles">
-            <div class="detalle-item">
-              <i class="bi bi-house-door-fill detalle-icono"></i>
-              <div class="detalle-contenido">
-                <h4>Ubicación</h4>
-                <p>Vía al Criadero Los 3<br>Zona Campestre</p>
-              </div>
-            </div>
-
-            <div class="detalle-item">
-              <i class="bi bi-clock-fill detalle-icono"></i>
-              <div class="detalle-contenido">
-                <h4>Horario de Atención</h4>
-                <p>Todos los días<br>8:00 AM - 10:00 PM</p>
-              </div>
-            </div>
-
-            <div class="detalle-item">
-              <i class="bi bi-telephone-fill detalle-icono"></i>
-              <div class="detalle-contenido">
-                <h4>Teléfono</h4>
-                <p><a href="tel:+573200000000">320 000 0000</a></p>
-              </div>
-            </div>
-
-            <div class="detalle-item">
-              <i class="bi bi-credit-card-fill detalle-icono"></i>
-              <div class="detalle-contenido">
-                <h4>Métodos de Pago</h4>
-                <p>Efectivo • Tarjetas • Transferencias</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="redes-sociales">
-            <a href="#" class="red-social facebook"><i class="bi bi-facebook"></i> Facebook</a>
-            <a href="#" class="red-social instagram"><i class="bi bi-instagram"></i> Instagram</a>
-            <a href="#" class="red-social whatsapp"><i class="bi bi-whatsapp"></i> WhatsApp</a>
-          </div>
-        </div>
-
-        <div class="contacto-mapa">
-          <div class="mapa-decoracion">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127363.25617449403!2d-76.22822289999999!3d3.9994992999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e39c300239dcb5d%3A0xc33d1821d6cc66bf!2sRestaurante%20Campestre%20El%20Faro!5e0!3m2!1ses-419!2sco!4v1761451647791!5m2!1ses-419!2sco"
-              width="100%" 
-              height="450" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy"
-              class="mapa-iframe">
-            </iframe>
-          </div>
-          <a href="https://maps.google.com" target="_blank" class="btn-direcciones">
-            <i class="bi bi-map"></i> Abrir en Google Maps
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Updated footer with icons -->
-  <footer class="footer-campestre">
-    <div class="container">
-      <div class="footer-contenido">
-        <div class="footer-col">
-          <div class="footer-logo">
-            <div class="footer-logo-circulo">
-              <img src="img/Logo_FARO.png" alt="El Faro" onerror="this.style.display='none'">
-              <div class="footer-logo-placeholder"><i class="bi bi-fire"></i></div>
-            </div>
-            <h3>Restaurante Campestre<br>El Faro</h3>
-          </div>
-          <p class="footer-desc">
-            Tradición, sabor y calidez campestre desde hace más de 10 años. 
-            Un pedacito de finca en cada plato.
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Menú</h4>
-          <ul class="footer-links">
-            <li><a href="#platos"><i class="bi bi-egg-fried"></i> Platos Fuertes</a></li>
-            <li><a href="#bebidas"><i class="bi bi-cup-straw"></i> Bebidas</a></li>
-            <li><a href="#porciones"><i class="bi bi-basket"></i> Porciones</a></li>
-            <li><a href="#contacto"><i class="bi bi-geo-alt"></i> Ubicación</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Horarios</h4>
-          <ul class="footer-info">
-            <li><i class="bi bi-calendar-check"></i> Lunes - Domingo</li>
-            <li><i class="bi bi-clock"></i> 8:00 AM - 10:00 PM</li>
-            <li><i class="bi bi-telephone"></i> 320 000 0000</li>
-            <li><i class="bi bi-house-door"></i> Criadero Los 3</li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Síguenos</h4>
-          <div class="footer-redes">
-            <a href="#" class="footer-red" title="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="footer-red" title="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="footer-red" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-          </div>
-          <p class="footer-cta">
-            <i class="bi bi-star-fill"></i> ¡Déjanos tu reseña!<br>
-            Tu opinión es importante
-          </p>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div class="footer-copy">
-          © 2025 Restaurante Campestre El Faro - Criadero Los 3
-        </div>
-        <div class="footer-credits">
-          Hecho con <i class="bi bi-heart-fill"></i> para amantes de la buena comida campestre
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Updated floating WhatsApp button -->
-  <a href="https://wa.me/573200000000" class="btn-whatsapp-flotante" target="_blank" title="Contáctanos por WhatsApp">
-    <i class="bi bi-whatsapp whatsapp-icon"></i>
-    <span class="whatsapp-texto">¿Tienes dudas?</span>
-  </a>
-
-  <!-- Updated back to top button -->
-  <button id="btnVolverArriba" class="btn-volver-arriba" title="Volver arriba">
-    <i class="bi bi-arrow-up"></i>
-  </button>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

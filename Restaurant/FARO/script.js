@@ -1,14 +1,6 @@
-// ============================================
-// 🌾 RESTAURANTE CAMPESTRE EL FARO 🌾
-// JavaScript para funcionalidad interactiva
-// ============================================
-
 document.addEventListener("DOMContentLoaded", () => {
   console.log("🔥 Restaurante Campestre El Faro cargado")
 
-  // ============================================
-  // MENÚ MÓVIL RESPONSIVE
-  // ============================================
   const btnMenuMobile = document.getElementById("btnMenu")
   const navLinks = document.querySelector(".nav-links")
 
@@ -34,9 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // ============================================
-  // SCROLL SUAVE PARA NAVEGACIÓN
-  // ============================================
   const enlacesNav = document.querySelectorAll('a[href^="#"]')
 
   enlacesNav.forEach((enlace) => {
@@ -47,20 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const targetSection = document.querySelector(targetId)
 
       if (targetSection) {
-        const navHeight = document.querySelector(".navbar-campestre").offsetHeight
-        const targetPosition = targetSection.offsetTop - navHeight - 20
-
-        window.scrollTo({
-          top: targetPosition,
+        targetSection.scrollIntoView({
           behavior: "smooth",
+          block: "start"
         })
       }
     })
   })
 
-  // ============================================
-  // CAMBIAR NAVBAR AL HACER SCROLL
-  // ============================================
   const navbar = document.querySelector(".navbar-campestre")
 
   window.addEventListener("scroll", () => {
@@ -71,9 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
-  // ============================================
-  // ANIMACIÓN AL HACER SCROLL (Intersection Observer)
-  // ============================================
   const observerOptions = {
     threshold: 0.1,
     rootMargin: "0px 0px -100px 0px",
@@ -97,9 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(elemento)
   })
 
-  // ============================================
-  // CONTADOR DE PLATOS PARA ESTADÍSTICAS
-  // ============================================
   const contarElementos = () => {
     const totalPlatos = document.querySelectorAll(".tarjeta-plato").length
     const totalBebidas = document.querySelectorAll(".item-bebida").length
@@ -114,9 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   contarElementos()
 
-  // ============================================
-  // MANEJO DE IMÁGENES CON ERROR
-  // ============================================
   const imagenes = document.querySelectorAll(".plato-imagen, .logo-principal")
 
   imagenes.forEach((img) => {
@@ -152,38 +126,15 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  // ============================================
-  // INICIALIZACIÓN COMPLETA
-  // ============================================
-  console.log(`
-    ╔═══════════════════════════════════════╗
-    ║  🌾 RESTAURANTE CAMPESTRE EL FARO 🌾 ║
-    ║      Criadero Los 3 - Colombia       ║
-    ║                                       ║
-    ║  Sistema de Menú Digital v3.0        ║
-    ║  Desarrollado con ❤️ y 🌿            ║
-    ╚═══════════════════════════════════════╝
-  `)
-
-  // ============================================
-  // PERFORMANCE MONITORING
-  // ============================================
   window.addEventListener("load", () => {
     const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart
     console.log(`⚡ Página cargada en ${loadTime}ms`)
   })
 
-  // ============================================
-  // PREVENIR ZOOM EN MOBILE (opcional)
-  // ============================================
   document.addEventListener("gesturestart", (e) => {
     e.preventDefault()
   })
 })
-
-// ============================================
-// FUNCIONES GLOBALES ÚTILES
-// ============================================
 
 function compartir(red) {
   const url = window.location.href

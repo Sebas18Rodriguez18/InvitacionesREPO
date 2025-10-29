@@ -1,11 +1,4 @@
-﻿/* ============================================
-   RESTAURANTE CAMPESTRE EL FARO
-   Diseño elegante y moderno
-   Colores: Naranja (#FF7F00) y Azul (#004C99)
-============================================ */
-
-/* Updated variables and improved color scheme */
-:root {
+﻿:root {
   --naranja-principal: #ff7f00;
   --naranja-claro: #ffa040;
   --naranja-oscuro: #cc6600;
@@ -57,7 +50,10 @@ body {
   position: relative;
 }
 
-/* Simplified background decorations, removed emoji leaves */
+section[id] {
+  scroll-margin-top: 80px; 
+}
+
 .decoraciones-fondo {
   position: fixed;
   top: 0;
@@ -120,7 +116,6 @@ body {
   z-index: 1;
 }
 
-/* Improved navbar with better icon spacing */
 .navbar-campestre {
   background: linear-gradient(135deg, var(--azul-principal), var(--azul-claro));
   box-shadow: var(--sombra-azul);
@@ -147,7 +142,6 @@ body {
   gap: 12px;
 }
 
-/* Logo stays still, removed rotation animation */
 .logo-mini {
   width: 50px;
   height: 50px;
@@ -181,7 +175,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* Better icon spacing in nav links */
 .nav-link {
   padding: 10px 20px;
   background: rgba(255, 255, 255, 0.15);
@@ -222,7 +215,6 @@ body {
   transform: scale(1.1);
 }
 
-/* Improved hero section */
 .hero-campestre {
   position: relative;
   min-height: 100vh;
@@ -271,7 +263,6 @@ body {
   }
 }
 
-/* Logo stays still, removed rotation */
 .logo-circulo {
   width: 180px;
   height: 180px;
@@ -295,7 +286,6 @@ body {
   position: relative;
 }
 
-/* Updated placeholder with icon */
 .logo-placeholder {
   position: absolute;
   inset: 0;
@@ -376,7 +366,6 @@ body {
   font-style: normal;
 }
 
-/* Improved feature items with better icon styling */
 .hero-features {
   display: flex;
   justify-content: center;
@@ -500,7 +489,6 @@ body {
   }
 }
 
-/* Improved welcome section */
 .seccion-bienvenida {
   padding: 80px 20px;
   background: var(--blanco);
@@ -541,7 +529,6 @@ body {
   margin-top: 40px;
 }
 
-/* Better icon styling in characteristics */
 .caracteristica {
   background: linear-gradient(135deg, var(--gris-claro), var(--blanco));
   padding: 35px 25px;
@@ -581,7 +568,6 @@ body {
   position: relative;
 }
 
-/* Improved section titles */
 .seccion-menu {
   margin-bottom: 80px;
 }
@@ -628,7 +614,6 @@ body {
   margin-top: 20px;
 }
 
-/* Improved dish cards, removed order button */
 .grid-platos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -757,7 +742,6 @@ body {
   margin-bottom: 0;
 }
 
-/* Improved separator with icons */
 .separador-campestre {
   display: flex;
   align-items: center;
@@ -779,7 +763,6 @@ body {
   border-radius: 10px;
 }
 
-/* Improved beverages section */
 .grid-bebidas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -874,17 +857,16 @@ body {
   color: var(--blanco);
 }
 
-/* Improved portions section */
 .grid-porciones {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 25px;
+  gap: 30px;
 }
 
 .tarjeta-porcion {
   background: var(--blanco);
-  padding: 35px 25px;
-  border-radius: 20px;
+  padding: 40px 30px;
+  border-radius: 25px;
   text-align: center;
   box-shadow: var(--sombra-media);
   border: 3px solid transparent;
@@ -893,27 +875,102 @@ body {
   overflow: hidden;
 }
 
+.tarjeta-porcion::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--naranja-principal), var(--naranja-claro));
+  transform: scaleX(0);
+  transition: var(--transicion);
+}
+
+.tarjeta-porcion:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--sombra-naranja);
+  border-color: var(--naranja-principal);
+}
+
+.tarjeta-porcion:hover::before {
+  transform: scaleX(1);
+}
+
+.tarjeta-porcion.destacada {
+  background: linear-gradient(135deg, var(--crema), var(--blanco));
+  border-color: var(--azul-principal);
+  box-shadow: var(--sombra-azul);
+}
+
+.tarjeta-porcion.destacada::after {
+  content: '⭐';
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  animation: rotar-estrella 3s linear infinite;
+}
+
+@keyframes rotar-estrella {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 .porcion-icono {
-  font-size: 4rem;
+  font-size: 4.5rem;
   margin-bottom: 20px;
   display: block;
   color: var(--naranja-principal);
+  transition: var(--transicion);
+}
+
+.tarjeta-porcion:hover .porcion-icono {
+  transform: scale(1.2) rotate(10deg);
+  color: var(--azul-principal);
+}
+
+.tarjeta-porcion.destacada .porcion-icono {
+  color: var(--azul-principal);
 }
 
 .porcion-nombre {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: var(--azul-principal);
-  margin-bottom: 15px;
-  font-weight: 700;
+  margin-bottom: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.porcion-descripcion {
+  font-size: 0.95rem;
+  color: var(--gris-oscuro);
+  margin-bottom: 20px;
+  line-height: 1.5;
+  font-style: italic;
 }
 
 .porcion-precio {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--naranja-principal);
   font-weight: 900;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, var(--gris-claro), var(--blanco));
+  border-radius: 50px;
+  display: inline-block;
+  box-shadow: var(--sombra-suave);
+  border: 2px solid var(--naranja-principal);
+  transition: var(--transicion);
 }
 
-/* Improved contact section */
+.tarjeta-porcion:hover .porcion-precio {
+  background: linear-gradient(135deg, var(--naranja-principal), var(--naranja-claro));
+  color: var(--blanco);
+  transform: scale(1.1);
+  box-shadow: var(--sombra-naranja);
+}
+
 .seccion-contacto {
   background: linear-gradient(135deg, var(--azul-principal), var(--azul-claro));
   padding: 80px 20px;
@@ -1068,7 +1125,6 @@ body {
   box-shadow: var(--sombra-naranja);
 }
 
-/* Improved footer */
 .footer-campestre {
   background: linear-gradient(135deg, var(--negro), #2a2a2a);
   color: var(--blanco);
@@ -1211,7 +1267,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* Improved floating buttons */
 .btn-whatsapp-flotante {
   position: fixed;
   bottom: 30px;
@@ -1276,7 +1331,6 @@ body {
   box-shadow: var(--sombra-azul);
 }
 
-/* Improved responsive design */
 @media (max-width: 1200px) {
   .grid-platos {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -1465,5 +1519,158 @@ body {
     page-break-inside: avoid;
     box-shadow: none;
     border: 1px solid var(--gris-medio);
+  }
+}
+
+section[id] {
+  scroll-margin-top: 80px; 
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .titulo-principal {
+    font-size: 4rem;
+  }
+
+  .titulo-subtitulo {
+    font-size: 1.8rem;
+  }
+  
+
+  .grid-platos,
+  .grid-bebidas,
+  .grid-porciones {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+  }
+}
+
+
+@media (max-width: 992px) {
+
+  .navbar-campestre {
+    height: 70px;
+  }
+  
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column; 
+    align-items: center;
+    background: var(--azul-principal);
+    padding: 10px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .nav-links.activo {
+    display: flex;
+    opacity: 1;
+  }
+
+  .nav-link {
+    width: 90%; 
+    justify-content: center;
+    padding: 12px 20px;
+    transform: none; 
+  }
+
+  .nav-link:hover {
+    transform: none;
+  }
+  
+  .menu-toggle {
+    display: block; 
+  }
+
+  .titulo-principal {
+    font-size: 3.5rem;
+  }
+  
+  .titulo-subtitulo {
+    font-size: 1.5rem;
+  }
+
+  .grid-platos,
+  .grid-bebidas,
+  .grid-porciones {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  .caracteristicas-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .seccion-bienvenida,
+  .contenido-principal,
+  .footer-campestre {
+    padding: 60px 15px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .footer-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .titulo-principal {
+    font-size: 2.2rem;
+  }
+
+  .titulo-subtitulo {
+    font-size: 1.2rem;
+  }
+
+  .hero-descripcion {
+    font-size: 1rem;
+  }
+  
+  .hero-botones {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn-principal,
+  .btn-secundario {
+    width: 100%;
+    padding: 15px 0;
+    transform: none; 
+  }
+
+  .titulo-decorado,
+  .titulo-seccion {
+    font-size: 2rem;
+  }
+
+  .grid-platos,
+  .grid-bebidas,
+  .caracteristicas-grid,
+  .grid-porciones {
+    grid-template-columns: 1fr;
+  }
+  
+  .tarjeta-plato:hover,
+  .caracteristica:hover,
+  .categoria-bebidas:hover {
+    transform: none;
+  }
+  
+  .whatsapp-texto {
+    display: none; 
   }
 }

@@ -25,6 +25,7 @@
                     <img src="img/Logo_FARO.png" alt="El Faro">
                 </div>
                 <span class="nav-titulo">El Faro</span>
+                <button id="btnMenu" class="btn-menu-mobile"><i class="bi bi-list"></i></button>
             </div>
             <div class="nav-links">
                 <a href="#platos" class="nav-link"><i class="bi bi-egg-fried"></i> Platos</a>
@@ -32,7 +33,6 @@
                 <a href="#porciones" class="nav-link"><i class="bi bi-basket"></i> Porciones</a>
                 <a href="#contacto" class="nav-link"><i class="bi bi-telephone"></i> Contacto</a>
             </div>
-            <button id="btnMenu" class="btn-menu-mobile"><i class="bi bi-list"></i></button>
         </div>
     </nav>
 
@@ -97,13 +97,13 @@
                         Bienvenidos a El Faro
                     </h2>
                     <p class="descripcion-campestre">
-                        En el corazón del <strong>Criadero Los 3</strong>, te ofrecemos una experiencia gastronómica única
+                        En el corazón de este restaurante, te ofrecemos una experiencia gastronómica única
                         donde los sabores tradicionales de la finca se encuentran con la calidez de un hogar campestre.
                         Cada plato es preparado con dedicación y los mejores ingredientes frescos.
                     </p>
                     <div class="caracteristicas-grid">
                         <div class="caracteristica">
-                            <i class="bi bi-bowl-hot-fill caracteristica-icono"></i>
+                            <i class="bi bi-fire caracteristica-icono"></i>
                             <h4>Platos Típicos</h4>
                             <p>Recetas tradicionales colombianas</p>
                         </div>
@@ -244,7 +244,7 @@
                         <div class="plato-contenido">
                             <h3 class="plato-nombre">Lasaña</h3>
                             <p class="plato-descripcion">Pan francés</p>
-                            <p class="plato-descripcion-encargo"><span>Solo por encargo!</span></p>
+                            <p class="plato-descripcion-encargo"><span>SOLO POR ENCARGO!</span></p>
                         </div>
                     </div>
 
@@ -425,7 +425,7 @@
                     </div>
 
                     <div class="categoria-bebidas">
-                        <h3 class="categoria-titulo"><i class="bi bi-droplet-fill"></i> Con Alcohol</h3>
+                        <h3 class="categoria-titulo"><i class="bi bi-cup-straw"></i> Con Alcohol</h3>
                         <div class="lista-bebidas">
                             <div class="item-bebida">
                                 <span class="bebida-nombre">Poker</span>
@@ -499,7 +499,7 @@
                                 <span class="bebida-precio">$ 20.000</span>
                             </div>
                             <div class="item-bebida">
-                                <span class="bebida-nombre">Media Jarra de Limonada</span>
+                                <span class="bebida-nombre">Media Jarra</span>
                                 <span class="bebida-puntos"></span>
                                 <span class="bebida-precio">$ 10.000</span>
                             </div>
@@ -567,44 +567,51 @@
 
                 <div class="grid-porciones">
                     <div class="tarjeta-porcion">
-                        <i class="bi bi-bowl-hot porcion-icono"></i>
-                        <h3 class="porcion-nombre">Porción de Sancocho</h3>
-                        <span class="porcion-precio">$ 7.000</span>
+                        <h3 class="porcion-nombre">Sancocho</h3>
+                        <p class="porcion-descripcion">Delicioso sancocho campestre</p>
+                        <div class="porcion-precio">$ 7.000</div>
                     </div>
-                    <div class="tarjeta-porcion">
-                        <i class="bi bi-cup-hot porcion-icono"></i>
-                        <h3 class="porcion-nombre">Porción de Mondongo</h3>
-                        <span class="porcion-precio">$ 12.000</span>
+
+                    <div class="tarjeta-porcion destacada">
+                        <h3 class="porcion-nombre">Mondongo</h3>
+                        <p class="porcion-descripcion">Tradicional y reconfortante</p>
+                        <div class="porcion-precio">$ 12.000</div>
                     </div>
+
                     <div class="tarjeta-porcion">
-                        <i class="bi bi-egg-fried porcion-icono"></i>
-                        <h3 class="porcion-nombre">Porción de Frijol</h3>
-                        <span class="porcion-precio">$ 7.000</span>
+                        <h3 class="porcion-nombre">Frijol</h3>
+                        <p class="porcion-descripcion">Frijoles caseros bien sabrosos</p>
+                        <div class="porcion-precio">$ 7.000</div>
                     </div>
+
                     <div class="tarjeta-porcion">
-                        <i class="bi bi-circle-fill porcion-icono"></i>
-                        <h3 class="porcion-nombre">Porción de Papa Criolla</h3>
-                        <span class="porcion-precio">$ 8.000</span>
+                        <h3 class="porcion-nombre">Papa Criolla</h3>
+                        <p class="porcion-descripcion">Doraditas y crocantes</p>
+                        <div class="porcion-precio">$ 8.000</div>
                     </div>
-                    <div class="tarjeta-porcion">
-                        <i class="bi bi-square-fill porcion-icono"></i>
-                        <h3 class="porcion-nombre">Porción de Tostada</h3>
-                        <span class="porcion-precio">$ 8.000</span>
+
+                    <div class="tarjeta-porcion destacada">
+                        <h3 class="porcion-nombre">Tostada</h3>
+                        <p class="porcion-descripcion">Crujiente y sabrosa</p>
+                        <div class="porcion-precio">$ 8.000</div>
                     </div>
+
                     <div class="tarjeta-porcion">
-                        <i class="bi bi-grid-3x3-gap-fill porcion-icono"></i>
-                        <h3 class="porcion-nombre">Porción de Arroz</h3>
-                        <span class="porcion-precio">$ 3.000</span>
+                        <h3 class="porcion-nombre">Arroz</h3>
+                        <p class="porcion-descripcion">Arroz blanco tradicional</p>
+                        <div class="porcion-precio">$ 3.000</div>
                     </div>
-                    <div class="tarjeta-porcion">
-                        <i class="bi bi-egg porcion-icono"></i>
-                        <h3 class="porcion-nombre">Porción de Nuggets</h3>
-                        <span class="porcion-precio">$ 15.000</span>
+
+                    <div class="tarjeta-porcion destacada">
+                        <h3 class="porcion-nombre">Nuggets</h3>
+                        <p class="porcion-descripcion">Para los más pequeños</p>
+                        <div class="porcion-precio">$ 15.000</div>
                     </div>
+
                     <div class="tarjeta-porcion">
-                        <i class="bi bi-hexagon-fill porcion-icono"></i>
-                        <h3 class="porcion-nombre">Porción de Yuca</h3>
-                        <span class="porcion-precio">$ 8.000</span>
+                        <h3 class="porcion-nombre">Yuca</h3>
+                        <p class="porcion-descripcion">Yuca frita o cocida</p>
+                        <div class="porcion-precio">$ 8.000</div>
                     </div>
                 </div>
             </section>
@@ -623,7 +630,7 @@
                     </h2>
                     <p class="descripcion-contacto">
                         Te esperamos en nuestro acogedor restaurante campestre.
-                        Un espacio perfecto para disfrutar en familia de los mejores sabores tradicionales.
+                        Un espacio perfecto para disfrutar en familia de los mejores sabores tradicionales y estar al aire libre.
                     </p>
 
                     <div class="info-detalles">
@@ -695,12 +702,11 @@
                     <div class="footer-logo">
                         <div class="footer-logo-circulo">
                             <img src="img/Logo_FARO.png" alt="El Faro" onerror="this.style.display='none'">
-                            <div class="footer-logo-placeholder"><i class="bi bi-fire"></i></div>
                         </div>
                         <h3>Restaurante Campestre<br>El Faro</h3>
                     </div>
                     <p class="footer-desc">
-                        Tradición, sabor y calidez campestre desde hace más de 10 años.
+                        Tradición, sabor y calidez campestre.
                         Un pedacito de finca en cada plato.
                     </p>
                 </div>

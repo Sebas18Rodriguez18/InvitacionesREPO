@@ -1,0 +1,28 @@
+INSTRUCCIONES PARA AGREGAR IMÁGENES A LA GALERÍA
+=================================================
+
+Para agregar tus imágenes a la galería del restaurante:
+
+1. Guarda tus imágenes en esta carpeta (img/galeria/)
+
+2. Nombra tus imágenes como:
+   - imagen1.jpg
+   - imagen2.jpg
+   - imagen3.jpg
+   - imagen4.jpg (esta es la imagen destacada, más grande)
+   - imagen5.jpg
+   - imagen6.jpg
+
+3. Puedes usar formatos JPG, JPEG, o PNG
+
+4. Para mejores resultados:
+   - Usa imágenes de buena calidad (mínimo 800x600 px)
+   - La imagen4.jpg debería ser horizontal (landscape) ya que ocupa más espacio
+   - Las demás pueden ser cuadradas o verticales
+
+5. Si quieres cambiar los textos de las imágenes:
+   - Abre el archivo index.html
+   - Busca la sección con id="galeria"
+   - Cambia el atributo data-caption="..." con la descripción que desees
+
+¡Listo! Las imágenes se mostrarán automáticamente en la galería.

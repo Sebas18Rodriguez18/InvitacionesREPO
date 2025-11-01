@@ -1,15 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("🔥 Restaurante Campestre El Faro cargado")
+  console.log("🔥 Restaurante Campestre El Faro cargado. Version 100% Mejorada.")
 
+  const navbar = document.querySelector(".navbar-campestre")
+  const heroSection = document.getElementById("hero")
+  const btnVolverArriba = document.getElementById("btnVolverArriba")
   const btnMenuMobile = document.getElementById("btnMenu")
   const navLinks = document.querySelector(".nav-links")
 
-  if (btnMenuMobile) {
+  if (btnMenuMobile && navLinks) {
     btnMenuMobile.addEventListener("click", () => {
-      navLinks.classList.toggle("activo")
+      const isExpanded = navLinks.classList.toggle("activo")
+      btnMenuMobile.setAttribute("aria-expanded", isExpanded)
 
       const icon = btnMenuMobile.querySelector("i")
-      if (navLinks.classList.contains("activo")) {
+      if (isExpanded) {
         icon.className = "bi bi-x-lg"
       } else {
         icon.className = "bi bi-list"
@@ -20,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     enlaces.forEach((enlace) => {
       enlace.addEventListener("click", () => {
         navLinks.classList.remove("activo")
+        btnMenuMobile.setAttribute("aria-expanded", "false")
         const icon = btnMenuMobile.querySelector("i")
         icon.className = "bi bi-list"
       })
@@ -44,118 +49,149 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  const navbar = document.querySelector(".navbar-campestre")
-
-  window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 100) {
-      navbar.style.boxShadow = "0 10px 30px rgba(0, 76, 153, 0.4)"
-    } else {
-      navbar.style.boxShadow = "0 8px 25px rgba(0, 76, 153, 0.3)"
+  if (heroSection && navbar) {
+    const heroObserverOptions = {
+      rootMargin: `-${navbar.offsetHeight}px 0px 0px 0px`,
+      threshold: 0,
     }
-  })
 
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -100px 0px",
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          navbar.classList.add("scrolled")
+        } else {
+          navbar.classList.remove("scrolled")
+        }
+      })
+    }, heroObserverOptions)
+
+    heroObserver.observe(heroSection)
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1"
-        entry.target.style.transform = "translateY(0)"
+  if (heroSection && btnVolverArriba) {
+    const scrollObserverOptions = {
+      rootMargin: "0px 0px -100px 0px",
+      threshold: 0.1,
+    }
+
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          btnVolverArriba.classList.add("show")
+        } else {
+          btnVolverArriba.classList.remove("show")
+        }
+      })
+    }, scrollObserverOptions)
+
+    scrollObserver.observe(heroSection)
+
+    btnVolverArriba.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      })
+    })
+  }
+  
+  const modal = document.getElementById("imagenModal")
+  const modalImagen = document.getElementById("modalImagenPrincipal")
+  const modalDescripcion = document.getElementById("modalDescripcion")
+  const cerrarModalBtn = document.querySelector(".cerrar-modal")
+
+  const platosConModal = document.querySelectorAll('[data-modal-target="true"]')
+
+  if (!modal || !modalImagen || !modalDescripcion) {
+    console.warn("Modal elements not found in DOM — modal functionality disabled.")
+  } else {
+    function abrirModal(imgSrc, captionText) {
+      if (!imgSrc) {
+        console.warn("No image source provided for modal, aborting abrirModal.")
+        return
+      }
+
+      modalImagen.src = imgSrc
+      modalDescripcion.textContent = captionText || ""
+      modal.classList.add("abierto")
+      document.body.style.overflow = "hidden"
+      modal.setAttribute('aria-hidden', 'false')
+    }
+
+    function cerrarModal() {
+      modal.classList.remove("abierto")
+      document.body.style.overflow = ""
+      modal.setAttribute('aria-hidden', 'true')
+    }
+
+    platosConModal.forEach(plato => {
+      plato.addEventListener("click", () => {
+        let imgSrc = plato.dataset.fullImg
+        
+        if (!imgSrc) {
+          const imgElement = plato.querySelector('img')
+          if (imgElement) {
+            imgSrc = imgElement.src
+          }
+        }
+        
+        const captionText = plato.dataset.caption || plato.querySelector(".plato-nombre")?.textContent || plato.getAttribute('aria-label') || ''
+        
+        if (imgSrc) {
+          abrirModal(imgSrc, captionText)
+        } else {
+          console.warn("No se encontró imagen para mostrar en el modal", plato)
+        }
+      })
+
+      plato.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault()
+          plato.click()
+        }
+      })
+    })
+
+    if (cerrarModalBtn) {
+      cerrarModalBtn.addEventListener("click", cerrarModal)
+    } else {
+      console.warn("Cerrar modal button not found — close button listener not attached.")
+    }
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        cerrarModal()
       }
     })
-  }, observerOptions)
 
-  const elementos = document.querySelectorAll(".tarjeta-plato, .categoria-bebidas, .tarjeta-porcion, .caracteristica")
-  elementos.forEach((elemento, index) => {
-    elemento.style.opacity = "0"
-    elemento.style.transform = "translateY(30px)"
-    elemento.style.transition = "all 0.6s ease-out"
-    elemento.style.transitionDelay = `${index * 0.05}s`
-    observer.observe(elemento)
-  })
-
-  const contarElementos = () => {
-    const totalPlatos = document.querySelectorAll(".tarjeta-plato").length
-    const totalBebidas = document.querySelectorAll(".item-bebida").length
-    const totalPorciones = document.querySelectorAll(".tarjeta-porcion").length
-
-    console.log(`📊 Estadísticas del Menú:
-    - Platos Fuertes: ${totalPlatos}
-    - Bebidas: ${totalBebidas}
-    - Porciones: ${totalPorciones}
-    - Total de Items: ${totalPlatos + totalBebidas + totalPorciones}`)
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("abierto")) {
+        cerrarModal()
+      }
+    })
   }
 
-  contarElementos()
-
-  const imagenes = document.querySelectorAll(".plato-imagen, .logo-principal")
-
-  imagenes.forEach((img) => {
-    img.addEventListener("error", function () {
-      if (!this.dataset.errorHandled) {
-        this.dataset.errorHandled = "true"
-
-        const parent = this.parentElement
-        const nombre = this.alt || "Imagen"
-
-        const placeholder = document.createElement("div")
-        placeholder.style.cssText = `
-          width: 100%;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          background: linear-gradient(135deg, #F5F5F5, #E0E0E0);
-          color: #666;
-          font-weight: 600;
-          padding: 20px;
-          text-align: center;
-        `
-        placeholder.innerHTML = `
-          <i class="bi bi-image" style="font-size: 3rem; margin-bottom: 10px; color: #FF7F00;"></i>
-          <div>${nombre}</div>
-        `
-
-        this.style.display = "none"
-        parent.appendChild(placeholder)
-      }
-    })
-  })
-
-  window.addEventListener("load", () => {
-    const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart
-    console.log(`⚡ Página cargada en ${loadTime}ms`)
-  })
-
-  document.addEventListener("gesturestart", (e) => {
-    e.preventDefault()
-  })
 })
 
 function compartir(red) {
-  const url = window.location.href
-  const titulo = "Restaurante Campestre El Faro - Criadero Los 3"
-  const texto = "¡Descubre los mejores sabores campestres en El Faro!"
+  const url = encodeURIComponent(window.location.href)
+  const titulo = encodeURIComponent("Restaurante Campestre El Faro - Criadero Los 3")
+  const texto = encodeURIComponent("¡Descubre los mejores sabores campestres en El Faro!")
 
   const urls = {
-    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-    twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(texto)}`,
-    whatsapp: `https://wa.me/?text=${encodeURIComponent(texto + " " + url)}`,
-    email: `mailto:?subject=${encodeURIComponent(titulo)}&body=${encodeURIComponent(texto + "\n\n" + url)}`,
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+    twitter: `https://twitter.com/intent/tweet?url=${url}&text=${texto}`,
+    whatsapp: `https://wa.me/?text=${texto + "%20" + url}`,
+    email: `mailto:?subject=${titulo}&body=${texto + "%20" + url}`,
+    linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${titulo}&summary=${texto}`
   }
 
   if (urls[red]) {
-    window.open(urls[red], "_blank", "width=600,height=400")
+    window.open(urls[red], '_blank')
+  } else {
+    console.error("Red social no soportada para compartir.")
   }
 }
 
-function imprimirMenu() {
-  window.print()
-}
-
-window.compartir = compartir
-window.imprimirMenu = imprimirMenu
+document.addEventListener("gesturestart", (e) => {
+  e.preventDefault()
+})
